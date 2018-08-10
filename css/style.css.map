@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,CAAE;EACE,UAAU,EAAE,UAAU;;AAG1B,IAAK;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,MAAM;;AAGf,GAAI;EACA,aAAa,EAAE,GAAG;;ACVtB,eAAgB;EACZ,OAAO,EAAE,IAAI",
+"sources": ["../scss/base/_elements.scss","../scss/components/_flex-layout.scss"],
 "names": [],
 "file": "style.css"
 }

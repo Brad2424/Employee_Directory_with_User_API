@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box; }
 
+body {
+  width: 90%;
+  margin: 0 auto; }
+
+img {
+  border-radius: 50%; }
+
+.flex-container {
+  display: flex; }
 
 /*# sourceMappingURL=style.css.map */
