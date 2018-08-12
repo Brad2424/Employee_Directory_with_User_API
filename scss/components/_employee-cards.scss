@@ -1,0 +1,18 @@
+.personalInfo {
+    * {
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+#name, #location {
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+#email {
+    font-size: 0.8em;
+    word-break: break-all;
+    text-decoration: underline;
+    color: rgb(112, 112, 255);
+}

@@ -17,9 +17,4 @@
             @content;
         }
     }
-    @else if $break == 'x-large' {
-        @media (min-width: $breakpoint-xlrg) {
-            @content;
-        }
-    }
 }

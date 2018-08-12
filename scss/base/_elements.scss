@@ -1,12 +1,42 @@
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
- width: 90%;
+ width: 98%;
  margin: 0 auto;
+ background-color: rgb(230, 230, 230);
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin: 20px 0 5px 10px;
+    @include mq(large) {
+        text-align: left;
+    }
+}
+
+a.modalLink {
+    cursor: pointer;
+    width: 300px;
+    flex: 1 1 auto;
+    margin: 10px;
+    @include mq(small) {
+        width: 340px;
+    }
 }
 
 img {
     border-radius: 50%;
+    height: 72px;
+    width: 72px;
+    margin: 20px;
+    @include mq(medium) {
+        height: 100px;
+        width: 100px;
+    }
 }
