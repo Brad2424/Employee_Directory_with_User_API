@@ -1,10 +1,10 @@
 const employeeDivs = document.querySelectorAll('div.employee');
-const modalContentDivs = document.querySelectorAll('.modalContent');
-const modalWindows = document.querySelectorAll('.modalWindow');
+const modalContentDivs = document.getElementsByClassName('modalContent');
+const modalWindows = document.getElementsByClassName('modalWindow');
 let employeesArr = [];
 
 
-const modalWindowLinks = document.querySelectorAll('.modalLink');
+const modalWindowLinks = document.getElementsByClassName('modalLink');
 const closeSpan = document.getElementsByClassName("close"); 
 
 // When the user clicks on a modal link, open the corresponding modal window
@@ -16,21 +16,16 @@ for (let i = 0; i < modalWindowLinks.length; i++) {
         modalWindow.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
     closeSpan.onclick = function() {
         modalWindow.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modalWindow[i]) {
-            modalWindow.style.display = "none";
-        }
-    }
+    // window.onclick = function(event) {
+    //     if (event.target == modalWindow[i]) {
+    //         modalWindow.style.display = "none";
+    //     }
+    // }
 }
-
-
-fetchAndAddToPage();
 
 // -----------------------------------------
 // FETCH FUNCTIONS
@@ -43,6 +38,8 @@ function fetchAndAddToPage() { return fetch('https://randomuser.me/api/?results=
         addToPage(employeesArr)
     })
 };
+
+fetchAndAddToPage();
 
 // -----------------------------------------
 // HELPER FUNCTIONS

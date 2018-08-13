@@ -47,14 +47,6 @@ img {
     .flex-container {
       justify-content: space-between; } }
 
-div[class^="employee"] {
-  border: solid 1px lightgrey;
-  border-radius: 10px;
-  background-color: whitesmoke;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  align-items: center; }
-
 .modalWindow {
   display: none;
   position: fixed;
@@ -88,6 +80,21 @@ div[class^="employee"] {
   text-decoration: none;
   cursor: pointer; }
 
+div[class^="employee"] {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center; }
+  div[class^="employee"]:hover {
+    transform: scale(1.01);
+    background-color: #fafafa;
+    box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.2), 0 9px 23px 0 rgba(0, 0, 0, 0.19); }
+
+h2 {
+  font-size: 1.2em; }
+
 .personalInfo * {
   display: inline-block;
   margin: 0; }
@@ -95,6 +102,9 @@ div[class^="employee"] {
 #name, #location {
   text-transform: capitalize;
   font-weight: 400; }
+
+#location {
+  font-size: 0.9em; }
 
 #email {
   font-size: 0.8em;
