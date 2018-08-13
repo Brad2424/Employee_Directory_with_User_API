@@ -1,31 +1,3 @@
-const employeeDivs = document.querySelectorAll('div.employee');
-const modalContentDivs = document.getElementsByClassName('modalContent');
-const modalWindows = document.getElementsByClassName('modalWindow');
-let employeesArr = [];
-
-
-const modalWindowLinks = document.getElementsByClassName('modalLink');
-const closeSpan = document.getElementsByClassName("close"); 
-
-// When the user clicks on a modal link, open the corresponding modal window
-for (let i = 0; i < modalWindowLinks.length; i++) {
-    const modalWindowLink = modalWindowLinks[i];
-    const modalWindow = modalWindows[i];
-
-    modalWindowLink.onclick = function () {
-        modalWindow.style.display = "block";
-    }
-
-    closeSpan.onclick = function() {
-        modalWindow.style.display = "none";
-    }
-
-    // window.onclick = function(event) {
-    //     if (event.target == modalWindow[i]) {
-    //         modalWindow.style.display = "none";
-    //     }
-    // }
-}
 
 // -----------------------------------------
 // FETCH FUNCTIONS
@@ -35,7 +7,8 @@ function fetchAndAddToPage() { return fetch('https://randomuser.me/api/?results=
     .then(response => response.json())
     .then(data => {
         employeesArr = data.results
-        addToPage(employeesArr)
+        addToPage(employeesArr);
+        addEventHandlers()
     })
 };
 
@@ -44,6 +17,9 @@ fetchAndAddToPage();
 // -----------------------------------------
 // HELPER FUNCTIONS
 // -----------------------------------------
+
+const employeeDivs = document.querySelectorAll('div.employee');
+let employeesArr = [];
 
 function addToPage(arr) {
 
@@ -76,5 +52,33 @@ function addToPage(arr) {
 
         employeeDivs[i].setAttribute("class", `employee__${i}`);
         employeeDivs[i].innerHTML += html;
+    }
+}
+
+const modalContentDivs = document.getElementsByClassName('modalContent');
+const modalWindows = document.getElementsByClassName('modalWindow');
+const modalWindowLinks = document.getElementsByClassName('modalLink');
+const closeSpans = document.getElementsByClassName('close'); 
+
+function addEventHandlers() {
+    
+    for (let i = 0; i < modalWindowLinks.length; i++) {
+        const modalWindowLink = modalWindowLinks[i];
+        const modalWindow = modalWindows[i];
+        const closeSpan = closeSpans[i];
+
+        modalWindowLink.addEventListener('click', function () {
+                modalWindow.style.display = "block";
+        })
+
+        closeSpan.addEventListener('click', function() {
+                modalWindow.style.display = "none";
+        })
+
+        // window.onclick = function(event) {
+        //     if (event.target == modalWindow[i]) {
+        //         modalWindow.style.display = "none";
+        //     }
+        // }
     }
 }

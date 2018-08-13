@@ -50,7 +50,7 @@ img {
 .modalWindow {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -58,7 +58,7 @@ img {
   overflow: auto;
   background-color: #d2d2d2;
   /* Fallback color */
-  background-color: rgba(128, 128, 128, 0.1); }
+  background-color: rgba(128, 128, 128, 0.8); }
 
 .modalContent {
   background-color: white;
@@ -72,13 +72,8 @@ img {
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold; }
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer; }
+  font-weight: bold;
+  z-index: 1000; }
 
 div[class^="employee"] {
   border: solid 1px lightgrey;
@@ -87,10 +82,6 @@ div[class^="employee"] {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   align-items: center; }
-  div[class^="employee"]:hover {
-    transform: scale(1.01);
-    background-color: #fafafa;
-    box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.2), 0 9px 23px 0 rgba(0, 0, 0, 0.19); }
 
 h2 {
   font-size: 1.2em; }
