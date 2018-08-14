@@ -17,15 +17,6 @@ h1 {
     h1 {
       text-align: left; } }
 
-a.modalLink {
-  cursor: pointer;
-  width: 300px;
-  flex: 1 1 auto;
-  margin: 10px; }
-  @media (min-width: 375px) {
-    a.modalLink {
-      width: 340px; } }
-
 img {
   border-radius: 50%;
   height: 72px;
@@ -65,15 +56,22 @@ img {
   margin: 5% auto;
   /* 15% from the top and centered */
   padding: 20px;
+  margin: 0;
   border: 1px solid #888;
-  width: 30%; }
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: calc(50% - (30% / 2)); }
 
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  position: relative;
+  bottom: 20px;
+  left: 20px;
+  font-size: 50px;
   font-weight: bold;
-  z-index: 1000; }
+  line-height: 0.6; }
 
 div[class^="employee"] {
   border: solid 1px lightgrey;
@@ -81,7 +79,14 @@ div[class^="employee"] {
   background-color: whitesmoke;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer;
+  width: 300px;
+  flex: 1 1 auto;
+  margin: 10px; }
+  @media (min-width: 375px) {
+    div[class^="employee"] {
+      width: 340px; } }
 
 h2 {
   font-size: 1.2em; }

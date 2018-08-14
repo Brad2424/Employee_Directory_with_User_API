@@ -20,16 +20,6 @@ h1 {
     }
 }
 
-a.modalLink {
-    cursor: pointer;
-    width: 300px;
-    flex: 1 1 auto;
-    margin: 10px;
-    @include mq(small) {
-        width: 340px;
-    }
-}
-
 img {
     border-radius: 50%;
     height: 72px;

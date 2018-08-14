@@ -1,3 +1,7 @@
+const employeeDivs = document.querySelectorAll('div.employee');
+const modalWindows = document.getElementsByClassName('modalWindow');
+const closeSpans = document.getElementsByClassName('close'); 
+let employeesArr = [];
 
 // -----------------------------------------
 // FETCH FUNCTIONS
@@ -17,9 +21,6 @@ fetchAndAddToPage();
 // -----------------------------------------
 // HELPER FUNCTIONS
 // -----------------------------------------
-
-const employeeDivs = document.querySelectorAll('div.employee');
-let employeesArr = [];
 
 function addToPage(arr) {
 
@@ -55,30 +56,26 @@ function addToPage(arr) {
     }
 }
 
-const modalContentDivs = document.getElementsByClassName('modalContent');
-const modalWindows = document.getElementsByClassName('modalWindow');
-const modalWindowLinks = document.getElementsByClassName('modalLink');
-const closeSpans = document.getElementsByClassName('close'); 
 
 function addEventHandlers() {
     
-    for (let i = 0; i < modalWindowLinks.length; i++) {
-        const modalWindowLink = modalWindowLinks[i];
+    for (let i = 0; i < employeeDivs.length; i++) {
+        const employeeDiv = employeeDivs[i];
         const modalWindow = modalWindows[i];
         const closeSpan = closeSpans[i];
-
-        modalWindowLink.addEventListener('click', function () {
-                modalWindow.style.display = "block";
-        })
 
         closeSpan.addEventListener('click', function() {
                 modalWindow.style.display = "none";
         })
 
-        // window.onclick = function(event) {
-        //     if (event.target == modalWindow[i]) {
-        //         modalWindow.style.display = "none";
-        //     }
-        // }
-    }
+        modalWindow.addEventListener('click', function(e) {
+                modalWindow.style.display = "none";
+        })
+
+        employeeDiv.addEventListener('click', function (e) {
+            if (e.target.tagName !== 'SPAN' && e.target !== modalWindow) {
+                modalWindow.style.display = "block";
+            }
+        })
+    };
 }
