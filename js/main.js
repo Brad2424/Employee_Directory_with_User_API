@@ -1,8 +1,8 @@
 const employeeDivs = document.querySelectorAll('div.employee');
 const modalWindows = document.getElementsByClassName('modalWindow');
-const closeSpans = document.getElementsByClassName('close'); 
 let employeesArr = [];
-let allNames = [];
+let amployeeNames = [];
+let employeeLocations = [];
 
 // -----------------------------------------
 // FETCH FUNCTIONS
@@ -12,13 +12,8 @@ function fetchAndAddToPage() { return fetch('https://randomuser.me/api/?results=
     .then(response => response.json())
     .then(data => {
         employeesArr = data.results
-        allNames = data.results.map(employee => {
-            return employee.name
-        });
-        console.log(data.results);
         addToPage(employeesArr);
-        addEventHandlers();
-        addAutoComplete();
+        addEventListners();
     })
 };
 
@@ -35,7 +30,10 @@ function addToPage(arr) {
         const html = `
                     <div class ="modalWindow" >
                         <span class="close">&times;</span>
+
                         <div class="modalContent">
+                            <span class="left">&#8678;</span>
+                            <span class="right">&#8680;</span>
                             <img src="${employee.picture.large}" alt="faceshot of ${employee.name.first} ${employee.name.last}">
                             <div class="personalInfo">
                                 <h2 id="name">${employee.name.first} ${employee.name.last}</h2><br>
@@ -66,12 +64,27 @@ function addToPage(arr) {
 }
 
 
-function addEventHandlers() {
+function addEventListners() {
+    const closeSpans = document.getElementsByClassName('close');
+    const leftSpans = document.getElementsByClassName('left');
+    const rightSpans = document.getElementsByClassName('right');
     
     for (let i = 0; i < employeeDivs.length; i++) {
+        const closeSpan = closeSpans[i];
+        const leftSpan = leftSpans[i];
+        const rightSpan = rightSpans[i];
         const employeeDiv = employeeDivs[i];
         const modalWindow = modalWindows[i];
-        const closeSpan = closeSpans[i];
+
+        leftSpan.addEventListener('click', function() {
+            modalWindow.style.display = "none";
+            modalWindows[i-1].style.display = "block";
+        })
+
+        rightSpan.addEventListener('click', function() {
+            modalWindow.style.display = "none";
+            modalWindows[i+1].style.display = "block";
+        })
 
         closeSpan.addEventListener('click', function() {
                 modalWindow.style.display = "none";
@@ -86,20 +99,18 @@ function addEventHandlers() {
                 modalWindow.style.display = "block";
             }
         })
-    };
+    }
 }
 
-function addAutoComplete() {
-    const firstNames = {
-        url: allNames,
-        getValue: "first"
-        };
+function searchBox() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toUpperCase();
 
-    const lastNames = {
-        url: allNames,
-        getValue: "last"
-    };
-        
-    $(".search-game").easyAutocomplete(firstNames);
-    $(".search-game").easyAutocomplete(lastNames);
+    for (let i = 0; i < employeeDivs.length; i++) {
+        if (employeeDivs[i].innerText.toUpperCase().indexOf(filter) > -1) {
+            employeeDivs[i].style.display = "";
+        } else {
+            employeeDivs[i].style.display = "none";
+        }
+    }
 }

@@ -41,16 +41,26 @@
     border-top: 1px lightgrey solid;
 }
 
+.left {
+    @extend %modalWindowSpan;
+    color: white;
+    right: 110%;
+    top: 30%;
+    padding: 10px;
+}
+.right {
+    @extend %modalWindowSpan;
+    color: white;
+    float: right;
+    left: 110%;
+    top: 30%;
+    padding: 10px;
+}
 .close {
-    color: #aaa;
-    position: relative;
+    @extend %modalWindowSpan; 
     float: right;
     top: calc(10% + 1%);
     right: calc((50% - (#{$modalContentWidth} / 2)) + 0.5%);
-    z-index: 3; 
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 0.6;
 }
 
 #address {
