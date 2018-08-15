@@ -11,10 +11,11 @@
 <body>
     <header>
         <h1>Awesome Startup Employee Directory</h1>
+        <input type="text" class="form-control search-game" placeholder="Type name or location...">
     </header>
-    <main class="flex-container">
+    <main class="flex-container containerItems">
         <div class="employee">
-            
+
         </div>
         <div class="employee">
 
@@ -50,6 +51,12 @@
             
         </div>            
     </main>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/e-search.min.js"></script>
+    <script>
+        $('input.form-control.search-game').search();
+    </script>
+    <script src="js/jquery.easy-autocomplete.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -12,9 +12,10 @@ body {
 h1 {
     text-align: center;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 1.5em;
     margin: 20px 0 5px 10px;
+    color: rgb(161, 204, 155);
     @include mq(large) {
         text-align: left;
     }
@@ -22,6 +23,7 @@ h1 {
 
 img {
     border-radius: 50%;
+    border: 5px solid rgb(245, 245, 245);
     height: 72px;
     width: 72px;
     margin: 20px;
@@ -29,4 +31,8 @@ img {
         height: 100px;
         width: 100px;
     }
+}
+
+.searchName {
+    display: none;
 }
