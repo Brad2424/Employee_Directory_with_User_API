@@ -36,8 +36,8 @@ function addToPage(arr) {
                             <span class="right">&#8680;</span>
                             <img src="${employee.picture.large}" alt="faceshot of ${employee.name.first} ${employee.name.last}">
                             <div class="personalInfo">
-                                <h2 id="name">${employee.name.first} ${employee.name.last}</h2><br>
-                                <a id="email">${employee.email}</a><br>
+                                <h2 id="name">${employee.name.first} ${employee.name.last}</h2>
+                                <a id="email">${employee.email}</a>
                                 <p id="location">${employee.location.city}</p>
                             </div>
                             <div class="personalInfo extraInfo">
@@ -50,8 +50,8 @@ function addToPage(arr) {
                     <div class = card>
                         <img src="${employee.picture.medium}" alt="faceshot of ${employee.name.first} ${employee.name.last}">
                         <div class="personalInfo">
-                            <h2 id="name">${employee.name.first} ${employee.name.last}</h2><br>
-                            <a id="email">${employee.email}</a><br>
+                            <h2 id="name">${employee.name.first} ${employee.name.last}</h2>
+                            <a id="email">${employee.email}</a>
                             <p id="location">${employee.location.city}</p>
                         </div>
                     </div>
