@@ -5,7 +5,7 @@ let amployeeNames = [];
 let employeeLocations = [];
 
 // -----------------------------------------
-// FETCH FUNCTIONS
+// FETCH FUNCTION
 // -----------------------------------------
 
 function fetchAndAddToPage() { return fetch('https://randomuser.me/api/?results=12&nat=nz&inc=name,email,location,picture,cell,dob')

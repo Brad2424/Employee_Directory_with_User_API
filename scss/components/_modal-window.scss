@@ -8,13 +8,13 @@
     height: 100%;
     overflow: auto;
     background-color: rgb(210, 210, 210); /* Fallback color */
-    background-color: rgba(128, 128, 128, 0.8);
+    background-color: rgba(230, 230, 230, 0.9); //background color faded//
 }
 
 .modalContent {
     background-color: white;
     padding: 20px;
-    border: 5px solid rgb(230, 230, 230);
+    border: 5px solid $border;
     border-radius: 10px;
     width: $modalContentWidth;
     margin: 5% auto;
@@ -26,39 +26,38 @@
     @include mq(medium) {
         width: calc(#{$modalContentWidth} - 60% );
     }
-
     img {
         margin-bottom: 0;
     }
 }
 
 .extraInfo {
-    border-top: 1px lightgrey solid;
+    border-top: 1px $border solid;
     padding-top: 5px;
     margin-top: 10px;
 }
 
 .left {
     @extend %modalWindowSpan;
-    right: 80%;
+    right: 70%;
     top: 20%;
     padding: 10px;
     @include mq(medium) {
         right: 70%;
         top: 30%;
-        color: white;
+        font-size: 8rem;
     }
 }
 .right {
     @extend %modalWindowSpan;
     float: right;
-    left: 80%;
+    left: 70%;
     top: 20%;
     padding: 10px;
     @include mq(medium) {
         left: 70%;
         top: 30%;
-        color: white;
+        font-size: 8rem;
     }
 }
 .close {

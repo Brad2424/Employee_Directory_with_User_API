@@ -6,7 +6,7 @@
 body {
  width: 98%;
  margin: 0 auto;
- background-color: rgb(230, 230, 230);
+ background-color: $background;
 }
 
 h1 {
@@ -15,7 +15,7 @@ h1 {
     font-weight: 800;
     font-size: 1.5em;
     margin: 20px 0 5px 10px;
-    color: rgb(161, 204, 155);
+    color: $headings;
     @include mq(large) {
         text-align: left;
         display: inline-block;
@@ -36,7 +36,7 @@ img {
 
 input {
     margin: 0 10px 0 10px;
-    border: solid 1px lightgrey;
+    border: solid 1px $border;
     border-radius: 10px;
     padding: 10px;
     width: calc(100% - 20px);

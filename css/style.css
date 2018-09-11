@@ -2,7 +2,7 @@
   color: #aaa;
   position: absolute;
   z-index: 1000;
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 0.6; }
 
@@ -21,7 +21,7 @@ h1 {
   font-weight: 800;
   font-size: 1.5em;
   margin: 20px 0 5px 10px;
-  color: #a1cc9b; }
+  color: #a0cd9b; }
   @media (min-width: 1200px) {
     h1 {
       text-align: left;
@@ -72,12 +72,12 @@ input {
   overflow: auto;
   background-color: #d2d2d2;
   /* Fallback color */
-  background-color: rgba(128, 128, 128, 0.8); }
+  background-color: rgba(230, 230, 230, 0.9); }
 
 .modalContent {
   background-color: white;
   padding: 20px;
-  border: 5px solid #e6e6e6;
+  border: 5px solid lightgrey;
   border-radius: 10px;
   width: 90%;
   margin: 5% auto;
@@ -98,25 +98,25 @@ input {
   margin-top: 10px; }
 
 .left {
-  right: 80%;
+  right: 70%;
   top: 20%;
   padding: 10px; }
   @media (min-width: 768px) {
     .left {
       right: 70%;
       top: 30%;
-      color: white; } }
+      font-size: 8rem; } }
 
 .right {
   float: right;
-  left: 80%;
+  left: 70%;
   top: 20%;
   padding: 10px; }
   @media (min-width: 768px) {
     .right {
       left: 70%;
       top: 30%;
-      color: white; } }
+      font-size: 8rem; } }
 
 .close {
   margin-top: 6%;
@@ -143,10 +143,10 @@ div[class^="employee"] {
     div[class^="employee"] {
       width: 340px; } }
   div[class^="employee"]:hover {
-    background-color: #c1f8ba; }
+    background-color: #a0cd9b; }
     div[class^="employee"]:hover .card {
       transform: scale(1.02);
-      background-color: #fafafa;
+      background-color: white;
       box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.2), 0 9px 23px 0 rgba(0, 0, 0, 0.19); }
 
 .personalInfo * {
@@ -178,6 +178,6 @@ div[class^="employee"] {
   font-size: 0.8em;
   word-break: break-all;
   text-decoration: underline;
-  color: #7070ff; }
+  color: #6e6eff; }
 
 /*# sourceMappingURL=style.css.map */
