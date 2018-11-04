@@ -1,11 +1,19 @@
 // -----------------------------
-// BREAKPOINTS------------------
+// BREAKPOINTS
 // -----------------------------
 $breakpoint-sml: 375px;
 $breakpoint-med: 768px;
 $breakpoint-lrg: 1200px;
 
 // -----------------------------
-// LAYOUT ----------------------
+// LAYOUT
 // -----------------------------
-$modalContentWidth: 30%;
+$modalContentWidth: 90%; //used to calc width on resize//
+
+// -----------------------------
+// COLORS
+// -----------------------------
+$background: rgb(230, 230, 230);
+$card-bg: rgb(245, 245, 245);
+$headings: rgb(160, 205, 155);
+$border: lightgrey;
